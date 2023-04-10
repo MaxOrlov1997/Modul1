@@ -8,17 +8,21 @@ public class task2 {
     public static void main(String[] args) {
         int[] vertical = {1, 2, 3, 4, 5, 6, 7, 8};
         String[] horizontal = {"A", "B", "C", "D", "E", "F", "G", "H"};
+        System.out.println("Введите начальное положение коня - буква");
         Scanner scan = new Scanner(System.in);
         String letter = scan.next();
+        System.out.println("Введите начальное положение коня - цифра");
         int num = scan.nextInt();
+        System.out.println("Куда желаете сделать ход - буква");
         String letterNext = scan.next();
+        System.out.println("Куда желаете сделать ход - цифра");
         int numNext = scan.nextInt();
         letter = letter.toUpperCase();
         letterNext = letterNext.toUpperCase();
-        kingMoveone(vertical, horizontal, letter, num, letterNext, numNext);
-        kingMovetwo(vertical, horizontal, letter, num, letterNext, numNext);
-        kingMovethree(vertical, horizontal, letter, num, letterNext, numNext);
-        kingMovefour(vertical, horizontal, letter, num, letterNext, numNext);
+        kingMoveone(vertical, horizontal, letter, num, letterNext, numNext); // ход на +1 букву
+        kingMovetwo(vertical, horizontal, letter, num, letterNext, numNext); // ход на +2 буквы
+        kingMovethree(vertical, horizontal, letter, num, letterNext, numNext); // ход на -1 букву
+        kingMovefour(vertical, horizontal, letter, num, letterNext, numNext); // ход на -2 буквы
 
 
     }
