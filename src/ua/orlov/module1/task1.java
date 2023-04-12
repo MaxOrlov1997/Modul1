@@ -12,39 +12,13 @@ public class task1 {
             array[i] = ThreadLocalRandom.current().nextInt(0, 10);
         }
         System.out.println(Arrays.toString(array));
-        int[] sorted = arrayCopy(array);
-        sort(sorted);
-        System.out.println(Arrays.toString(sorted));
+        System.out.println(compareArray(array));
+    }
+
+    public static int compareArray(int[] comArray) {
         int compare = 1;
-        System.out.println(compareArray(sorted, compare));
-
-    }
-
-    public static int[] arrayCopy(int[] intilianArray) {
-        return Arrays.copyOf(intilianArray, intilianArray.length);
-    }
-
-    public static void sort(int[] array) {
-        boolean isChanget;
-        int changeAmount = 0;
-        do {
-            isChanget = false;
-            for (int i = 0; i < array.length - 1 - changeAmount; i++) {
-                if (array[i] > array[i + 1]) {
-                    int rev = array[i];
-                    array[i] = array[i + 1];
-                    array[i + 1] = rev;
-                    isChanget = true;
-                }
-            }
-            changeAmount++;
-        }
-        while (isChanget);
-    }
-
-
-    public static int compareArray(int[] comArray, int compare) {
-
+        Arrays.copyOf(comArray, comArray.length);
+        Arrays.sort(comArray);
         for (int i = 0; i < comArray.length - 1; i++) {
             if (comArray[i] == comArray[i + 1]) {
                 continue;
@@ -52,7 +26,6 @@ public class task1 {
                 ++compare;
             }
         }
-
         return compare;
     }
 
