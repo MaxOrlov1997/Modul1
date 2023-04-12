@@ -4,7 +4,7 @@ import java.util.Arrays;
 import java.util.concurrent.ThreadLocalRandom;
 
 /*Найти количество различных элементов массива. Пример: для 1 4 5 1 1 3 ответ 4.
-* *Создать метод, который принимает массив и возвращает количество  различных  элементов.*/
+ * *Создать метод, который принимает массив и возвращает количество  различных  элементов.*/
 public class task1 {
     public static void main(String[] args) {
         int[] array = new int[5];
@@ -16,7 +16,6 @@ public class task1 {
         sort(sorted);
         System.out.println(Arrays.toString(sorted));
         int compare = 1;
-compareArray(sorted, compare);
         System.out.println(compareArray(sorted, compare));
 
     }
@@ -35,26 +34,26 @@ compareArray(sorted, compare);
                     int rev = array[i];
                     array[i] = array[i + 1];
                     array[i + 1] = rev;
-                    isChanget=true;
+                    isChanget = true;
                 }
             }
             changeAmount++;
         }
-        while (isChanget);}
+        while (isChanget);
+    }
 
 
-    public static int compareArray(int[] comArray, int compare){
+    public static int compareArray(int[] comArray, int compare) {
 
-        for (int i = 0; i < comArray.length-1; i++) {
-            if (comArray[i]==comArray[i+1]) {
+        for (int i = 0; i < comArray.length - 1; i++) {
+            if (comArray[i] == comArray[i + 1]) {
                 continue;
-            }
-            else {
+            } else {
                 ++compare;
             }
         }
 
         return compare;
-        }
+    }
 
 }
